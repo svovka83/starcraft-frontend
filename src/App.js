@@ -1,7 +1,11 @@
-import "./App.css";
+import Start from "./pages/Start";
 
 function App() {
-  return <div>StarCraft</div>;
+  return (
+    <div>
+      <Start />
+    </div>
+  );
 }
 
 export default App;
