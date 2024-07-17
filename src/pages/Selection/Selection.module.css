@@ -1,0 +1,9 @@
+.selection > h2 {
+  text-align: center;
+}
+
+.selection > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
