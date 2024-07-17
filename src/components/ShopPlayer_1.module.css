@@ -1,0 +1,14 @@
+.shopPlayer_1 {
+  padding: 0 15px;
+}
+
+.shopPlayer_1 > ul {
+  text-align: center;
+}
+
+.shopPlayer_1 > ul>li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  cursor: pointer;
+}
