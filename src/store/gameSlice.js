@@ -8,7 +8,7 @@ const initialState = {
   armyPlayerOne: [],
   battlegroundPlayerOne: [],
   workersPlayerOne: [PROBE],
-  mineralsMinePlayerOne: 50,
+  mineralsMinePlayerOne: 20,
   mineralsPlayerOne: 10,
 };
 
@@ -57,8 +57,13 @@ const gameSlice = createSlice({
       };
     },
     addMinerals: (state) => {
-      state.mineralsMinePlayerOne -= state.workersPlayerOne.length;
-      state.mineralsPlayerOne += state.workersPlayerOne.length;
+      if (state.mineralsMinePlayerOne < state.workersPlayerOne.length) {
+        state.mineralsPlayerOne += state.mineralsMinePlayerOne;
+        state.mineralsMinePlayerOne = 0;
+      } else {
+        state.mineralsMinePlayerOne -= state.workersPlayerOne.length;
+        state.mineralsPlayerOne += state.workersPlayerOne.length;
+      }
     },
   },
   selectors: {
