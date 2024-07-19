@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { addMinerals, mineralsMinePlayerOne } from "../../../store/playerOneSlice";
+import { addMinerals, mineralsMinePlayerOne } from "../../../store/gameSlice";
 
 const MineralMinePlayerOne = () => {
   const dispatch = useDispatch();

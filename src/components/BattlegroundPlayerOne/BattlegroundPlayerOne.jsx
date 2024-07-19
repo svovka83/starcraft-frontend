@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./BattlegroundPlayerOne.module.css";
 
-import { battlegroundPlayerOne } from "../../store/playerOneSlice";
+import { battlegroundPlayerOne } from "../../store/gameSlice";
 
 const BattlegroundPlayerOne = () => {
   const units = useSelector(battlegroundPlayerOne);

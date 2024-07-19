@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ShopPlayerOne.module.css";
 
-import { addUnitToArmy, unitsPlayerOne } from "../../store/playerOneSlice";
+import { addUnitToArmy, unitsPlayerOne } from "../../store/gameSlice";
 
 const ShopPlayerOne = () => {
   const dispatch = useDispatch();

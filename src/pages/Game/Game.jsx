@@ -16,23 +16,23 @@ const Game = () => {
         <div>
           <ShopPlayerOne />
         </div>
-        <div>unit 1 player 1</div>
-        <div>unit 1 player 2</div>
-        <div>123</div>
+        <div>empty</div>
+        <div>empty</div>
+        <div>shop</div>
         <div>
           <ArmyPlayerOne />
         </div>
         <div>
           <BattlegroundPlayerOne />
         </div>
-        <div>123</div>
-        <div>123</div>
+        <div>Battleground</div>
+        <div>army</div>
         <div>
           <MineralProductPlayerOne />
         </div>
-        <div>unit 3 player 1</div>
-        <div>unit 3 player 2</div>
-        <div>123</div>
+        <div>empty</div>
+        <div>empty</div>
+        <div>minerals</div>
       </div>
     </div>
   );

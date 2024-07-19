@@ -5,7 +5,7 @@ import styles from "./MineralProductPlayerOne.module.css";
 import WorkersPlayerOne from "./WorkersPlayerOne/WorkersPlayerOne";
 import MineralMinePlayerOne from "./MineralMinePlayerOne/MineralMinePlayerOne";
 
-import { addWorker, workersPlayerOne } from "../../store/playerOneSlice";
+import { addWorker, workersPlayerOne } from "../../store/gameSlice";
 
 const MineralProductPlayerOne = () => {
   const dispatch = useDispatch();

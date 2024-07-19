@@ -4,29 +4,29 @@ import { ZERG, DRONE } from "../constants/zerg";
 import { PROTOSS, PROBE } from "../constants/protoss";
 
 const initialState = {
-  unitsPlayerOne: ZERG,
+  unitsPlayerOne: PROTOSS,
   armyPlayerOne: [],
   battlegroundPlayerOne: [],
-  workersPlayerOne: [DRONE],
+  workersPlayerOne: [PROBE],
   mineralsMinePlayerOne: 50,
   mineralsPlayerOne: 0,
 };
 
-const playerOneSlice = createSlice({
-  name: "playerOne",
+const gameSlice = createSlice({
+  name: "game",
   initialState,
   reducers: {
     addUnitToArmy: (state, action) => {
       const addUnit = state.unitsPlayerOne.find(
         (el) => el.id === action.payload
       );
-      const changeUnit = state.unitsPlayerOne.filter(
+      const newShop = state.unitsPlayerOne.filter(
         (el) => el.id !== action.payload
       );
       const buyUnit = state.mineralsPlayerOne - addUnit.price;
       return {
         ...state,
-        unitsPlayerOne: changeUnit,
+        unitsPlayerOne: newShop,
         armyPlayerOne: [...state.armyPlayerOne, addUnit],
         mineralsPlayerOne: buyUnit,
       };
@@ -45,7 +45,7 @@ const playerOneSlice = createSlice({
       };
     },
     addWorker: (state) => {
-      const addWorker = DRONE;
+      const addWorker = PROBE;
       return {
         ...state,
         workersPlayerOne: [...state.workersPlayerOne, addWorker],
@@ -67,7 +67,7 @@ const playerOneSlice = createSlice({
 });
 
 export const { addUnitToArmy, addUnitToBattleground, addWorker, addMinerals } =
-  playerOneSlice.actions;
+  gameSlice.actions;
 
 export const {
   unitsPlayerOne,
@@ -76,6 +76,6 @@ export const {
   workersPlayerOne,
   mineralsMinePlayerOne,
   mineralsPlayerOne,
-} = playerOneSlice.selectors;
+} = gameSlice.selectors;
 
-export const reducerPlayerOne = playerOneSlice.reducer;
+export const reducerGame = gameSlice.reducer;
