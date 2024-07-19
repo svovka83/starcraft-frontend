@@ -1,10 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import { addMinerals, mineralsMinePlayerOne } from "../../../store/gameSlice";
+import { addMinerals, selectorMine } from "../../../store/gameSlice";
 
-const MinePlayerTwo = () => {
+const MinePlayerOne = () => {
   const dispatch = useDispatch();
-  const minerals = useSelector(mineralsMinePlayerOne);
+  const minerals = useSelector(selectorMine);
 
   return (
     <div>
@@ -14,4 +14,4 @@ const MinePlayerTwo = () => {
   );
 };
 
-export default MinePlayerTwo;
+export default MinePlayerOne;

@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./ArmyPlayerOne.module.css";
+import styles from "./Army.module.css";
 
 import { selectorArmy, addUnitToBattleground } from "../../store/gameSlice";
 
@@ -14,7 +14,7 @@ const ArmyPlayerOne = () => {
   };
 
   return (
-    <div className={styles.armyPlayerOne}>
+    <div className={styles.army}>
       <ul>
         {units.map((el, index) => (
           <li key={index} onClick={() => addUnit(el.id)}>

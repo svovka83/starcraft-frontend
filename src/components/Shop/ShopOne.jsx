@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./ShopPlayer.module.css";
+import styles from "./Shop.module.css";
 
-import { addUnitToArmyOne, selectorUnits } from "../../store/gameSlice";
+import { addUnitToArmy, selectorUnits } from "../../store/gameSlice";
 
-const ShopPlayerOne = () => {
+const ShopOne = () => {
   const dispatch = useDispatch();
   const units = useSelector(selectorUnits);
 
   const addUnit = (unitId) => {
-    dispatch(addUnitToArmyOne(unitId));
+    dispatch(addUnitToArmy(unitId));
   };
 
   return (
-    <div className={styles.shopPlayer}>
+    <div className={styles.shop}>
       <ul>
         {units.map((el) => (
           <li key={el.id} onClick={() => addUnit(el.id)}>
@@ -25,4 +25,4 @@ const ShopPlayerOne = () => {
   );
 };
 
-export default ShopPlayerOne;
+export default ShopOne;

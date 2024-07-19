@@ -2,10 +2,11 @@ import { useSelector } from "react-redux";
 
 import styles from "./HeaderGame.module.css";
 
-import { mineralsPlayerOne } from "../../store/gameSlice";
+import { selectorMinerals } from "../../store/gameSlice";
 
 const HeaderGame = () => {
-  const minerals = useSelector(mineralsPlayerOne);
+  const minerals = useSelector(selectorMinerals);
+
   return <div className={styles.headerGame}>Minerals: {minerals}</div>;
 };
 

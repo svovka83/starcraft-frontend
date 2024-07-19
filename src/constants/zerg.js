@@ -1,5 +1,5 @@
 export const DRONE = {
-  id: 1,
+  id: 11,
   name: "Drone",
   price: 1,
 };

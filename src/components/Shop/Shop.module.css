@@ -1,12 +1,12 @@
-.shopPlayer {
+.shop {
   padding: 0 15px;
 }
 
-.shopPlayer > ul {
+.shop > ul {
   text-align: center;
 }
 
-.shopPlayer > ul>li {
+.shop > ul>li {
   padding-bottom: 5px;
   margin-bottom: 5px;
   border: 1px solid;

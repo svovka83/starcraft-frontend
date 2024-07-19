@@ -1,15 +1,15 @@
 import { useDispatch, useSelector } from "react-redux";
 
-// import styles from "./MineralProductPlayerOne.module.css";
+import styles from "./Minerals.module.css";
 
-import WorkersPlayerOne from "./Workers/WorkersPlayerOne";
-import MinePlayerOne from "./Mine/MinePlayerOne";
+import WorkersOne from "./Workers/Workers";
+import MineOne from "./Mine/Mine";
 
-import { addWorker, workersPlayerOne } from "../../store/gameSlice";
+import { addWorker, selectorWorkers } from "../../store/gameSlice";
 
 const MineralsPlayerOne = () => {
   const dispatch = useDispatch();
-  const workers = useSelector(workersPlayerOne);
+  const workers = useSelector(selectorWorkers);
 
   const addWorkers = () => {
     if (workers.length > 2) {
@@ -20,10 +20,10 @@ const MineralsPlayerOne = () => {
   return (
     <div>
       <div>
-        <WorkersPlayerOne workers={workers} addWorker={addWorkers} />
+        <WorkersOne workers={workers} addWorker={addWorkers} />
       </div>
       <div>
-        <MinePlayerOne />
+        <MineOne />
       </div>
     </div>
   );

@@ -6,95 +6,80 @@ import { PROTOSS, PROBE } from "../constants/protoss";
 const initialState = {
   units: ZERG,
   army: [],
-  battlegroundPlayerOne: [],
-  workersPlayerOne: [DRONE],
-  mineralsMinePlayerOne: 20,
-  mineralsPlayerOne: 10,
-  
-  unitsPlayerTwo: PROTOSS,
-  mineralsPlayerTwo: 10,
+  battleground: [],
+  workers: [DRONE],
+  mine: 20,
+  minerals: 10,
 };
 
 const gameSlice = createSlice({
   name: "game",
   initialState,
   reducers: {
-    addUnitToArmyOne: (state, action) => {
-      const addUnit = state.units.find(
-        (el) => el.id === action.payload
-      );
+    addUnitToArmy: (state, action) => {
+      const addUnit = state.units.find((el) => el.id === action.payload);
 
-      if (state.mineralsPlayerOne < addUnit.price) return;
-      const buyUnit = state.mineralsPlayerOne - addUnit.price;
+      if (state.minerals < addUnit.price) return;
+      const buyUnit = state.minerals - addUnit.price;
 
-      const newShop = state.units.filter(
-        (el) => el.id !== action.payload
-      );
+      const newShop = state.units.filter((el) => el.id !== action.payload);
       return {
         ...state,
         units: newShop,
         army: [...state.army, addUnit],
-        mineralsPlayerOne: buyUnit,
+        minerals: buyUnit,
       };
     },
     addUnitToBattleground: (state, action) => {
-      const battleUnit = state.army.find(
-        (el) => el.id === action.payload
-      );
-      const removeUnit = state.army.filter(
-        (el) => el.id !== action.payload
-      );
+      const battleUnit = state.army.find((el) => el.id === action.payload);
+      const removeUnit = state.army.filter((el) => el.id !== action.payload);
       return {
         ...state,
         army: removeUnit,
-        battlegroundPlayerOne: [...state.battlegroundPlayerOne, battleUnit],
+        battleground: [...state.battleground, battleUnit],
       };
     },
     addWorker: (state) => {
       const addWorker = DRONE;
-      const buyWorker = state.mineralsPlayerOne - addWorker.price;
+      const buyWorker = state.minerals - addWorker.price;
       return {
         ...state,
-        workersPlayerOne: [...state.workersPlayerOne, addWorker],
-        mineralsPlayerOne: buyWorker,
+        workers: [...state.workers, addWorker],
+        minerals: buyWorker,
       };
     },
     addMinerals: (state) => {
-      if (state.mineralsMinePlayerOne < state.workersPlayerOne.length) {
-        state.mineralsPlayerOne += state.mineralsMinePlayerOne;
-        state.mineralsMinePlayerOne = 0;
+      if (state.mine < state.workers.length) {
+        state.minerals += state.mine;
+        state.mine = 0;
       } else {
-        state.mineralsMinePlayerOne -= state.workersPlayerOne.length;
-        state.mineralsPlayerOne += state.workersPlayerOne.length;
+        state.mine -= state.workers.length;
+        state.minerals += state.workers.length;
       }
     },
   },
   selectors: {
     selectorUnits: (state) => state.units,
     selectorArmy: (state) => state.army,
-    battlegroundPlayerOne: (state) => state.battlegroundPlayerOne,
-    workersPlayerOne: (state) => state.workersPlayerOne,
-    mineralsMinePlayerOne: (state) => state.mineralsMinePlayerOne,
-    mineralsPlayerOne: (state) => state.mineralsPlayerOne,
+    selectorBattleground: (state) => state.battleground,
+    selectorWorkers: (state) => state.workers,
+    selectorMine: (state) => state.mine,
+    selectorMinerals: (state) => state.minerals,
 
     unitsPlayerTwo: (state) => state.unitsPlayerTwo,
   },
 });
 
-export const {
-  addUnitToArmyOne,
-  addUnitToBattleground,
-  addWorker,
-  addMinerals,
-} = gameSlice.actions;
+export const { addUnitToArmy, addUnitToBattleground, addWorker, addMinerals } =
+  gameSlice.actions;
 
 export const {
   selectorUnits,
   selectorArmy,
-  battlegroundPlayerOne,
-  workersPlayerOne,
-  mineralsMinePlayerOne,
-  mineralsPlayerOne,
+  selectorBattleground,
+  selectorWorkers,
+  selectorMine,
+  selectorMinerals,
 
   unitsPlayerTwo,
 } = gameSlice.selectors;

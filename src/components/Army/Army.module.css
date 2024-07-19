@@ -1,12 +1,12 @@
-.battlegroundPlayerOne {
+.army {
   padding: 0 15px;
 }
 
-.battlegroundPlayerOne>ul {
+.army>ul {
   text-align: center;
 }
 
-.battlegroundPlayerOne>ul>li {
+.army>ul>li {
   padding-bottom: 5px;
   margin-bottom: 5px;
   border: 1px solid;

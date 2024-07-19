@@ -1,14 +1,14 @@
 import { useSelector } from "react-redux";
 
-import styles from "./BattlegroundPlayerOne.module.css";
+import styles from "./Battleground.module.css";
 
-import { battlegroundPlayerOne } from "../../store/gameSlice";
+import { selectorBattleground } from "../../store/gameSlice";
 
 const BattlegroundPlayerOne = () => {
-  const units = useSelector(battlegroundPlayerOne);
+  const units = useSelector(selectorBattleground);
 
   return (
-    <div className={styles.battlegroundPlayerOne}>
+    <div className={styles.battleground}>
       <ul>
         {units.map((el, index) => (
           <li key={index}>{el.name}</li>
