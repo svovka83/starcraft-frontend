@@ -1,9 +1,15 @@
 import styles from "./Game.module.css";
 
 import HeaderGame from "../../components/HeaderGame/HeaderGame";
-import ShopPlayerOne from "../../components/ShopPlayerOne/ShopPlayerOne";
+
+import ShopPlayerOne from "../../components/ShopPlayers/ShopPlayerOne";
+import ShopPlayerTwo from "../../components/ShopPlayers/ShopPlayerTwo";
+
 import ArmyPlayerOne from "../../components/ArmyPlayerOne/ArmyPlayerOne";
-import MineralProductPlayerOne from "../../components/MineralProductPlayerOne/MineralProductPlayerOne";
+
+import MineralsPlayerOne from "../../components/MineralsProduction/MineralsPlayerOne";
+import MineralsPlayerTwo from "../../components/MineralsProduction/MineralsPlayerTwo";
+
 import BattlegroundPlayerOne from "../../components/BattlegroundPlayerOne/BattlegroundPlayerOne";
 
 const Game = () => {
@@ -18,7 +24,7 @@ const Game = () => {
         </div>
         <div>empty</div>
         <div>empty</div>
-        <div>shop</div>
+        <div><ShopPlayerTwo /></div>
         <div>
           <ArmyPlayerOne />
         </div>
@@ -28,11 +34,11 @@ const Game = () => {
         <div>Battleground</div>
         <div>army</div>
         <div>
-          <MineralProductPlayerOne />
+          <MineralsPlayerOne />
         </div>
         <div>empty</div>
         <div>empty</div>
-        <div>minerals</div>
+        <div><MineralsPlayerTwo /></div>
       </div>
     </div>
   );

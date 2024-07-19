@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./ShopPlayerOne.module.css";
+import styles from "./ShopPlayer.module.css";
 
-import { addUnitToArmy, unitsPlayerOne } from "../../store/gameSlice";
+import { addUnitToArmyOne, selectorUnits } from "../../store/gameSlice";
 
 const ShopPlayerOne = () => {
   const dispatch = useDispatch();
-  const units = useSelector(unitsPlayerOne);
+  const units = useSelector(selectorUnits);
 
   const addUnit = (unitId) => {
-    dispatch(addUnitToArmy(unitId))
+    dispatch(addUnitToArmyOne(unitId));
   };
 
   return (
-    <div className={styles.shopPlayerOne}>
+    <div className={styles.shopPlayer}>
       <ul>
         {units.map((el) => (
           <li key={el.id} onClick={() => addUnit(el.id)}>

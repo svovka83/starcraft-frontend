@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./MineralProductPlayerOne.module.css";
+// import styles from "./MineralProductPlayerOne.module.css";
 
-import WorkersPlayerOne from "./WorkersPlayerOne/WorkersPlayerOne";
-import MineralMinePlayerOne from "./MineralMinePlayerOne/MineralMinePlayerOne";
+import WorkersPlayerTwo from "./Workers/WorkersPlayerTwo";
+import MinePlayerTwo from "./Mine/MinePlayerTwo";
 
 import { addWorker, workersPlayerOne } from "../../store/gameSlice";
 
-const MineralProductPlayerOne = () => {
+const MineralsPlayerTwo = () => {
   const dispatch = useDispatch();
   const workers = useSelector(workersPlayerOne);
 
@@ -20,13 +20,13 @@ const MineralProductPlayerOne = () => {
   return (
     <div>
       <div>
-        <WorkersPlayerOne workers={workers} addWorker={addWorkers} />
+        <WorkersPlayerTwo workers={workers} addWorker={addWorkers} />
       </div>
       <div>
-        <MineralMinePlayerOne />
+        <MinePlayerTwo />
       </div>
     </div>
   );
 };
 
-export default MineralProductPlayerOne;
+export default MineralsPlayerTwo;

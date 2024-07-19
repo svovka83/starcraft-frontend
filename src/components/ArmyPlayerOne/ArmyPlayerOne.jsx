@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ArmyPlayerOne.module.css";
 
-import { armyPlayerOne, addUnitToBattleground } from "../../store/gameSlice";
+import { selectorArmy, addUnitToBattleground } from "../../store/gameSlice";
 
 const ArmyPlayerOne = () => {
   const dispatch = useDispatch();
-  const units = useSelector(armyPlayerOne);
+  const units = useSelector(selectorArmy);
 
   const addUnit = (unitId) => {
     console.log(unitId);
