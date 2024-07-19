@@ -5,11 +5,11 @@ import styles from "./Minerals.module.css";
 import WorkersOne from "./Workers/Workers";
 import MineOne from "./Mine/Mine";
 
-import { addWorker, selectorWorkers } from "../../store/gameSlice";
+import { addWorker, selectorWorkersOne } from "../../store/gameSlice";
 
 const MineralsPlayerOne = () => {
   const dispatch = useDispatch();
-  const workers = useSelector(selectorWorkers);
+  const workers = useSelector(selectorWorkersOne);
 
   const addWorkers = () => {
     if (workers.length > 2) {

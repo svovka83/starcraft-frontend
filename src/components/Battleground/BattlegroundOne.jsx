@@ -2,10 +2,10 @@ import { useSelector } from "react-redux";
 
 import styles from "./Battleground.module.css";
 
-import { selectorBattleground } from "../../store/gameSlice";
+import { selectorBattlegroundOne } from "../../store/gameSlice";
 
 const BattlegroundPlayerOne = () => {
-  const units = useSelector(selectorBattleground);
+  const units = useSelector(selectorBattlegroundOne);
 
   return (
     <div className={styles.battleground}>

@@ -3,9 +3,10 @@ import styles from "./Game.module.css";
 import HeaderGame from "../../components/HeaderGame/HeaderGame";
 import ShopOne from "../../components/Shop/ShopOne";
 import ShopTwo from "../../components/Shop/ShopTwo";
-import ArmyPlayerOne from "../../components/Army/Army";
-import MineralsPlayerOne from "../../components/MineralsProduction/Minerals";
-import BattlegroundPlayerOne from "../../components/Battleground/Battleground";
+import ArmyOne from "../../components/Army/ArmyOne";
+import ArmyTwo from "../../components/Army/ArmyTwo";
+import MineralsPlayerOne from "../../components/MineralsProduction/MineralsOne";
+import BattlegroundPlayerOne from "../../components/Battleground/BattlegroundOne";
 
 const Game = () => {
   return (
@@ -21,13 +22,13 @@ const Game = () => {
         <div>empty</div>
         <div><ShopTwo /></div>
         <div>
-          <ArmyPlayerOne />
+          <ArmyOne />
         </div>
         <div>
           <BattlegroundPlayerOne />
         </div>
         <div>Battleground</div>
-        <div>army</div>
+        <div><ArmyTwo /></div>
         <div>
           <MineralsPlayerOne />
         </div>

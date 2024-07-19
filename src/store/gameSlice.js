@@ -38,7 +38,7 @@ const gameSlice = createSlice({
       const newShop = player.units.filter((el) => el.id !== action.payload);
       return {
         ...state,
-        one: {
+        [state.turn ? "one" : "two"]: {
           ...player,
           units: newShop,
           army: [...player.army, addUnit],
@@ -53,7 +53,7 @@ const gameSlice = createSlice({
       const removeUnit = player.army.filter((el) => el.id !== action.payload);
       return {
         ...state,
-        one: {
+        [state.turn ? "one" : "two"]: {
           ...player,
           army: removeUnit,
           battleground: [...player.battleground, battleUnit],
@@ -67,7 +67,7 @@ const gameSlice = createSlice({
       const buyWorker = player.minerals - addWorker.price;
       return {
         ...state,
-        one: {
+        [state.turn ? "one" : "two"]: {
           ...player,
           workers: [...player.workers, addWorker],
           minerals: buyWorker,
@@ -88,13 +88,16 @@ const gameSlice = createSlice({
   },
   selectors: {
     selectorUnitsOne: (state) => state.one.units,
-    selectorArmy: (state) => state.one.army,
-    selectorBattleground: (state) => state.one.battleground,
-    selectorWorkers: (state) => state.one.workers,
+    selectorArmyOne: (state) => state.one.army,
+    selectorBattlegroundOne: (state) => state.one.battleground,
+    selectorWorkersOne: (state) => state.one.workers,
     selectorMine: (state) => state.one.mine,
     selectorMinerals: (state) => state.one.minerals,
     
     selectorUnitsTwo: (state) => state.two.units,
+    selectorArmyTwo: (state) => state.two.army,
+    selectorBattlegroundTwo: (state) => state.two.battleground,
+    selectorWorkersTwo: (state) => state.two.workers,
   },
 });
 
@@ -103,13 +106,16 @@ export const { addUnitToArmy, addUnitToBattleground, addWorker, addMinerals } =
 
 export const {
   selectorUnitsOne,
-  selectorArmy,
-  selectorBattleground,
-  selectorWorkers,
+  selectorArmyOne,
+  selectorBattlegroundOne,
+  selectorWorkersOne,
   selectorMine,
   selectorMinerals,
-
+  
   selectorUnitsTwo,
+  selectorArmyTwo,
+  selectorBattlegroundTwo,
+  selectorWorkersTwo,
 } = gameSlice.selectors;
 
 export const reducerGame = gameSlice.reducer;
