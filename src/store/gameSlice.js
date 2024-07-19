@@ -9,7 +9,7 @@ const initialState = {
   battlegroundPlayerOne: [],
   workersPlayerOne: [PROBE],
   mineralsMinePlayerOne: 50,
-  mineralsPlayerOne: 0,
+  mineralsPlayerOne: 10,
 };
 
 const gameSlice = createSlice({
@@ -20,10 +20,13 @@ const gameSlice = createSlice({
       const addUnit = state.unitsPlayerOne.find(
         (el) => el.id === action.payload
       );
+
+      if (state.mineralsPlayerOne < addUnit.price) return;
+      const buyUnit = state.mineralsPlayerOne - addUnit.price;
+
       const newShop = state.unitsPlayerOne.filter(
         (el) => el.id !== action.payload
       );
-      const buyUnit = state.mineralsPlayerOne - addUnit.price;
       return {
         ...state,
         unitsPlayerOne: newShop,
@@ -46,9 +49,11 @@ const gameSlice = createSlice({
     },
     addWorker: (state) => {
       const addWorker = PROBE;
+      const buyWorker = state.mineralsPlayerOne - addWorker.price;
       return {
         ...state,
         workersPlayerOne: [...state.workersPlayerOne, addWorker],
+        mineralsPlayerOne: buyWorker,
       };
     },
     addMinerals: (state) => {
