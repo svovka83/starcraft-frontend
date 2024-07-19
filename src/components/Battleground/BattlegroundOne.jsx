@@ -4,7 +4,7 @@ import styles from "./Battleground.module.css";
 
 import { selectorBattlegroundOne } from "../../store/gameSlice";
 
-const BattlegroundPlayerOne = () => {
+const BattlegroundOne = () => {
   const units = useSelector(selectorBattlegroundOne);
 
   return (
@@ -18,4 +18,4 @@ const BattlegroundPlayerOne = () => {
   );
 };
 
-export default BattlegroundPlayerOne;
+export default BattlegroundOne;

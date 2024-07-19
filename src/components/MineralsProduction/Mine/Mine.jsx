@@ -1,17 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
-
-import { addMinerals, selectorMine } from "../../../store/gameSlice";
-
-const MinePlayerOne = () => {
-  const dispatch = useDispatch();
-  const minerals = useSelector(selectorMine);
-
+const Mine = (props) => {
   return (
     <div>
-      <button onClick={() => dispatch(addMinerals())}>Add minerals</button>
-      <p>Minerals: {minerals} </p>
+      <button onClick={props.takeMinerals}>Add minerals</button>
+      <p>Minerals: {props.minerals} </p>
     </div>
   );
 };
 
-export default MinePlayerOne;
+export default Mine;

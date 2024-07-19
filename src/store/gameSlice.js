@@ -63,7 +63,7 @@ const gameSlice = createSlice({
     addWorker: (state) => {
       const player = state.turn ? state.one : state.two;
 
-      const addWorker = player.workers;
+      const addWorker = player.workers[0];
       const buyWorker = player.minerals - addWorker.price;
       return {
         ...state,
@@ -91,13 +91,15 @@ const gameSlice = createSlice({
     selectorArmyOne: (state) => state.one.army,
     selectorBattlegroundOne: (state) => state.one.battleground,
     selectorWorkersOne: (state) => state.one.workers,
-    selectorMine: (state) => state.one.mine,
-    selectorMinerals: (state) => state.one.minerals,
-    
+    selectorMineOne: (state) => state.one.mine,
+    selectorMineralsOne: (state) => state.one.minerals,
+
     selectorUnitsTwo: (state) => state.two.units,
     selectorArmyTwo: (state) => state.two.army,
     selectorBattlegroundTwo: (state) => state.two.battleground,
     selectorWorkersTwo: (state) => state.two.workers,
+    selectorMineTwo: (state) => state.two.mine,
+    selectorMineralsTwo: (state) => state.two.minerals,
   },
 });
 
@@ -109,13 +111,15 @@ export const {
   selectorArmyOne,
   selectorBattlegroundOne,
   selectorWorkersOne,
-  selectorMine,
-  selectorMinerals,
-  
+  selectorMineOne,
+  selectorMineralsOne,
+
   selectorUnitsTwo,
   selectorArmyTwo,
   selectorBattlegroundTwo,
   selectorWorkersTwo,
+  selectorMineTwo,
+  selectorMineralsTwo,
 } = gameSlice.selectors;
 
 export const reducerGame = gameSlice.reducer;

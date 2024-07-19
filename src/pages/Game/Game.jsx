@@ -5,8 +5,10 @@ import ShopOne from "../../components/Shop/ShopOne";
 import ShopTwo from "../../components/Shop/ShopTwo";
 import ArmyOne from "../../components/Army/ArmyOne";
 import ArmyTwo from "../../components/Army/ArmyTwo";
-import MineralsPlayerOne from "../../components/MineralsProduction/MineralsOne";
-import BattlegroundPlayerOne from "../../components/Battleground/BattlegroundOne";
+import BattlegroundOne from "../../components/Battleground/BattlegroundOne";
+import BattlegroundTwo from "../../components/Battleground/BattlegroundTwo";
+import MineralsOne from "../../components/MineralsProduction/MineralsOne";
+import MineralsTwo from "../../components/MineralsProduction/MineralsTwo";
 
 const Game = () => {
   return (
@@ -25,16 +27,16 @@ const Game = () => {
           <ArmyOne />
         </div>
         <div>
-          <BattlegroundPlayerOne />
+          <BattlegroundOne />
         </div>
-        <div>Battleground</div>
+        <div><BattlegroundTwo /></div>
         <div><ArmyTwo /></div>
         <div>
-          <MineralsPlayerOne />
+          <MineralsOne />
         </div>
         <div>empty</div>
         <div>empty</div>
-        <div>MineralsPlayerTwo</div>
+        <div><MineralsTwo /></div>
       </div>
     </div>
   );

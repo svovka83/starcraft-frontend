@@ -11,9 +11,9 @@
 .battleground {
   display: grid;
   grid-template:
-    "1fr 1fr 1fr 1fr"
-    "1fr 1fr 1fr 1fr"
-    "1fr 1fr 1fr 1fr"
+    "a d e f"
+    "b d e g"
+    "c d e h"
 }
 
 .battleground>div {

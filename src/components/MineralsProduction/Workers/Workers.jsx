@@ -1,4 +1,4 @@
-const WorkersPlayerOne = (props) => {
+const Workers = (props) => {
   return (
     <div>
       <button onClick={props.addWorker}>Add worker</button> price:{" "}
@@ -10,4 +10,4 @@ const WorkersPlayerOne = (props) => {
   );
 };
 
-export default WorkersPlayerOne;
+export default Workers;
