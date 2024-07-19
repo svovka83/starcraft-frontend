@@ -1,22 +1,28 @@
+export const DRONE = {
+  id: 1,
+  name: "Drone",
+  price: 1,
+};
+
 export const ZERG = [
   {
     id: 1,
-    name: "Drone",
+    name: "Zergling",
+    price: 1,
   },
   {
     id: 2,
-    name: "Zergling",
+    name: "Gydralisk",
+    price: 2,
   },
   {
     id: 3,
-    name: "Gydralisk",
+    name: "Mutalisk",
+    price: 3,
   },
   {
     id: 4,
-    name: "Mutalisk",
-  },
-  {
-    id: 5,
     name: "Ultralisk",
+    price: 6,
   },
 ];

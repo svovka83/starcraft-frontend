@@ -1,0 +1,14 @@
+.battlegroundPlayerOne {
+  padding: 0 15px;
+}
+
+.battlegroundPlayerOne>ul {
+  text-align: center;
+}
+
+.battlegroundPlayerOne>ul>li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  cursor: pointer;
+}

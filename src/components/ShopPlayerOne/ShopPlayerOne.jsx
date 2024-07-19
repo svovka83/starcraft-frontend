@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ShopPlayerOne.module.css";
 
-import { addUnitToArmy, unitsPlayerOne } from "../../store/gameSlice";
+import { addUnitToArmy, unitsPlayerOne } from "../../store/playerOneSlice";
 
 const ShopPlayerOne = () => {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ const ShopPlayerOne = () => {
       <ul>
         {units.map((el) => (
           <li key={el.id} onClick={() => addUnit(el.id)}>
-            {el.name}
+            {el.name} price: {el.price}
           </li>
         ))}
       </ul>

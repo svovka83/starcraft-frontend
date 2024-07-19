@@ -3,15 +3,18 @@ import { useDispatch, useSelector } from "react-redux";
 import styles from "./MineralProductPlayerOne.module.css";
 
 import WorkersPlayerOne from "./WorkersPlayerOne/WorkersPlayerOne";
-
-import { addWorker, workersPlayerOne } from "../../store/gameSlice";
 import MineralMinePlayerOne from "./MineralMinePlayerOne/MineralMinePlayerOne";
+
+import { addWorker, workersPlayerOne } from "../../store/playerOneSlice";
 
 const MineralProductPlayerOne = () => {
   const dispatch = useDispatch();
   const workers = useSelector(workersPlayerOne);
 
   const addWorkers = () => {
+    if (workers.length > 2) {
+      return alert("maximum workers");
+    }
     dispatch(addWorker());
   };
   return (

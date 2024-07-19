@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { reducerGame } from "./gameSlice";
+import { reducerPlayerOne } from "./playerOneSlice";
 
 export const store = configureStore({
   reducer: {
-    game: reducerGame,
+    playerOne: reducerPlayerOne,
   },
 });

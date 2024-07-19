@@ -4,6 +4,7 @@ import HeaderGame from "../../components/HeaderGame/HeaderGame";
 import ShopPlayerOne from "../../components/ShopPlayerOne/ShopPlayerOne";
 import ArmyPlayerOne from "../../components/ArmyPlayerOne/ArmyPlayerOne";
 import MineralProductPlayerOne from "../../components/MineralProductPlayerOne/MineralProductPlayerOne";
+import BattlegroundPlayerOne from "../../components/BattlegroundPlayerOne/BattlegroundPlayerOne";
 
 const Game = () => {
   return (
@@ -17,19 +18,21 @@ const Game = () => {
         </div>
         <div>unit 1 player 1</div>
         <div>unit 1 player 2</div>
-        <div>shop player 2</div>
+        <div>123</div>
         <div>
           <ArmyPlayerOne />
         </div>
-        <div>unit 2 player 1</div>
-        <div>unit 2 player 2</div>
-        <div>army player 2</div>
+        <div>
+          <BattlegroundPlayerOne />
+        </div>
+        <div>123</div>
+        <div>123</div>
         <div>
           <MineralProductPlayerOne />
         </div>
         <div>unit 3 player 1</div>
         <div>unit 3 player 2</div>
-        <div>minerals player 2</div>
+        <div>123</div>
       </div>
     </div>
   );
