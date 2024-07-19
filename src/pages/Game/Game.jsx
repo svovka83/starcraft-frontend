@@ -2,6 +2,7 @@ import styles from "./Game.module.css";
 
 import HeaderGame from "../../components/HeaderGame/HeaderGame";
 import ShopOne from "../../components/Shop/ShopOne";
+import ShopTwo from "../../components/Shop/ShopTwo";
 import ArmyPlayerOne from "../../components/Army/Army";
 import MineralsPlayerOne from "../../components/MineralsProduction/Minerals";
 import BattlegroundPlayerOne from "../../components/Battleground/Battleground";
@@ -18,7 +19,7 @@ const Game = () => {
         </div>
         <div>empty</div>
         <div>empty</div>
-        <div>shop</div>
+        <div><ShopTwo /></div>
         <div>
           <ArmyPlayerOne />
         </div>

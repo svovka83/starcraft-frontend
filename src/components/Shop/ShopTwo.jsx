@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Shop.module.css";
 
-import { addUnitToArmy, selectorUnitsOne } from "../../store/gameSlice";
+import { addUnitToArmy, selectorUnitsTwo } from "../../store/gameSlice";
 
-const ShopOne = () => {
+const ShopTwo = () => {
   const dispatch = useDispatch();
-  const units = useSelector(selectorUnitsOne);
+  const units = useSelector(selectorUnitsTwo);
 
   const addUnit = (unitId) => {
     dispatch(addUnitToArmy(unitId));
@@ -25,4 +25,4 @@ const ShopOne = () => {
   );
 };
 
-export default ShopOne;
+export default ShopTwo;
