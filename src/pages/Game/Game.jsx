@@ -9,6 +9,8 @@ import BattlegroundOne from "../../components/Battleground/BattlegroundOne";
 import BattlegroundTwo from "../../components/Battleground/BattlegroundTwo";
 import MineralsOne from "../../components/MineralsProduction/MineralsOne";
 import MineralsTwo from "../../components/MineralsProduction/MineralsTwo";
+import FighterOne from "../../components/Fighter/FighterOne";
+import FighterTwo from "../../components/Fighter/FighterTwo";
 
 const Game = () => {
   return (
@@ -20,23 +22,35 @@ const Game = () => {
         <div>
           <ShopOne />
         </div>
-        <div>empty</div>
-        <div>empty</div>
-        <div><ShopTwo /></div>
+        <div>
+          <FighterOne />
+        </div>
+        <div>
+          <FighterTwo />
+        </div>
+        <div>
+          <ShopTwo />
+        </div>
         <div>
           <ArmyOne />
         </div>
         <div>
           <BattlegroundOne />
         </div>
-        <div><BattlegroundTwo /></div>
-        <div><ArmyTwo /></div>
+        <div>
+          <BattlegroundTwo />
+        </div>
+        <div>
+          <ArmyTwo />
+        </div>
         <div>
           <MineralsOne />
         </div>
         <div>empty</div>
         <div>empty</div>
-        <div><MineralsTwo /></div>
+        <div>
+          <MineralsTwo />
+        </div>
       </div>
     </div>
   );
