@@ -2,11 +2,16 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Shop.module.css";
 
-import { addUnitToArmy, selectorUnitsTwo } from "../../store/gameSlice";
+import {
+  addUnitToArmy,
+  selectorTurn,
+  selectorUnitsTwo,
+} from "../../store/gameSlice";
 
 const ShopTwo = () => {
   const dispatch = useDispatch();
   const units = useSelector(selectorUnitsTwo);
+  const turn = useSelector(selectorTurn);
 
   const addUnit = (unitId) => {
     dispatch(addUnitToArmy(unitId));
@@ -16,8 +21,10 @@ const ShopTwo = () => {
     <div className={styles.shop}>
       <ul>
         {units.map((el) => (
-          <li key={el.id} onClick={() => addUnit(el.id)}>
-            {el.name} price: {el.price}
+          <li key={el.id}>
+            <button disabled={turn} onClick={() => addUnit(el.id)}>
+              {el.name} price: {el.price}
+            </button>
           </li>
         ))}
       </ul>
