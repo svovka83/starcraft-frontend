@@ -11,7 +11,9 @@ const BattlegroundOne = () => {
     <div className={styles.battleground}>
       <ul>
         {units.map((el, index) => (
-          <li key={index}>{el.name}</li>
+          <li key={index}>
+            {el.health} :health {el.name} attack: {el.attack}
+          </li>
         ))}
       </ul>
     </div>

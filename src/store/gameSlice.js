@@ -10,7 +10,7 @@ const initialState = {
     battleground: [],
     workers: [DRONE],
     mine: 20,
-    minerals: 10,
+    minerals: 5,
   },
   two: {
     units: PROTOSS,
@@ -18,7 +18,7 @@ const initialState = {
     battleground: [],
     workers: [PROBE],
     mine: 20,
-    minerals: 10,
+    minerals: 5,
   },
   turn: true,
 };
