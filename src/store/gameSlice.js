@@ -44,6 +44,7 @@ const gameSlice = createSlice({
           army: [...player.army, addUnit],
           minerals: buyUnit,
         },
+        turn: !state.turn,
       };
     },
     addUnitToBattleground: (state, action) => {
@@ -58,10 +59,13 @@ const gameSlice = createSlice({
           army: removeUnit,
           battleground: [...player.battleground, battleUnit],
         },
+        turn: !state.turn,
       };
     },
     addWorker: (state) => {
       const player = state.turn ? state.one : state.two;
+
+      if (player.workers.length > 2) return;
 
       const addWorker = player.workers[0];
       const buyWorker = player.minerals - addWorker.price;
@@ -72,17 +76,20 @@ const gameSlice = createSlice({
           workers: [...player.workers, addWorker],
           minerals: buyWorker,
         },
+        turn: !state.turn,
       };
     },
     addMinerals: (state) => {
       const player = state.turn ? state.one : state.two;
 
-      if (player.mine < player.workers.length) {
+      if (player.mine === 0) return;
+      else if (player.mine < player.workers.length) {
         player.minerals += player.mine;
-        player.mine = 0;
+        state.turn = !state.turn;
       } else {
         player.mine -= player.workers.length;
         player.minerals += player.workers.length;
+        state.turn = !state.turn;
       }
     },
   },
@@ -100,6 +107,8 @@ const gameSlice = createSlice({
     selectorWorkersTwo: (state) => state.two.workers,
     selectorMineTwo: (state) => state.two.mine,
     selectorMineralsTwo: (state) => state.two.minerals,
+
+    selectorTurn: (state) => state.turn,
   },
 });
 
@@ -120,6 +129,8 @@ export const {
   selectorWorkersTwo,
   selectorMineTwo,
   selectorMineralsTwo,
+
+  selectorTurn,
 } = gameSlice.selectors;
 
 export const reducerGame = gameSlice.reducer;

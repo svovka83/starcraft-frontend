@@ -1,7 +1,9 @@
 const Mine = (props) => {
   return (
     <div>
-      <button onClick={props.takeMinerals}>Add minerals</button>
+      <button disabled={props.turn} onClick={props.takeMinerals}>
+        Add minerals
+      </button>
       <p>Minerals: {props.minerals} </p>
     </div>
   );

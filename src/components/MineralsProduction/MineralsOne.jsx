@@ -10,12 +10,15 @@ import {
   addMinerals,
   selectorWorkersOne,
   selectorMineOne,
+  selectorTurn,
 } from "../../store/gameSlice";
 
 const MineralsOne = () => {
   const dispatch = useDispatch();
   const workers = useSelector(selectorWorkersOne);
   const minerals = useSelector(selectorMineOne);
+  const turnRevers = useSelector(selectorTurn);
+  const turn = !turnRevers;
 
   const addWorkers = () => {
     if (workers.length > 2) {
@@ -29,10 +32,10 @@ const MineralsOne = () => {
   return (
     <div>
       <div>
-        <Workers workers={workers} addWorker={addWorkers} />
+        <Workers workers={workers} addWorker={addWorkers} turn={turn} />
       </div>
       <div>
-        <Mine minerals={minerals} takeMinerals={takeMinerals} />
+        <Mine minerals={minerals} takeMinerals={takeMinerals} turn={turn} />
       </div>
     </div>
   );
