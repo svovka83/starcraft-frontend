@@ -1,7 +1,11 @@
-.unit {
+/* .unit {
+  position: absolute;
+} */
+
+.img {
   width: 80px;
   height: 80px;
-  padding: 10px 0;
+  padding: 15px 0;
   border-radius: 50%;
 }
 
@@ -19,7 +23,7 @@
   font-size: 14px;
   font-weight: 600;
   color: rgb(255, 103, 255);
-  transform: translateY(-80%);
+  transform: translateY(-65%);
 }
 
 .health_attack {

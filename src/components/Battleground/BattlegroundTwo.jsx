@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Battleground.module.css";
 
+import Unit from "../Unit/Unit";
+
 import { addFighterTwo, selectorBattlegroundTwo } from "../../store/gameSlice";
 
 const BattlegroundTwo = () => {
@@ -14,13 +16,17 @@ const BattlegroundTwo = () => {
 
   return (
     <div className={styles.battleground}>
-      <ul>
-        {units.map((el, index) => (
-          <li key={index} onClick={() => addUnit(el.id)}>
-            {el.health} :health {el.name} attack: {el.attack}
-          </li>
-        ))}
-      </ul>
+      {units.map((el) => (
+        <Unit
+          key={el.id}
+          id={el.id}
+          name={el.name}
+          health={el.health}
+          attack={el.attack}
+          // turn={turn}
+          addUnit={addUnit}
+        />
+      ))}
     </div>
   );
 };

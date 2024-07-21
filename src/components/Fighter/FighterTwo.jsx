@@ -1,15 +1,24 @@
 import { useSelector } from "react-redux";
 
+import styles from "./Fighter.module.css";
+
+import Unit from "../Unit/Unit";
+
 import { selectorFighterTwo } from "../../store/gameSlice";
 
 const FighterTwo = () => {
   const fighter = useSelector(selectorFighterTwo);
 
   return (
-    <div>
-      <h3>{fighter.name}</h3>
-      <p>health: {fighter.health}</p>
-      <p>attack: {fighter.attack}</p>
+    <div className={styles.fighter}>
+      <Unit
+        id={fighter.id}
+        name={fighter.name}
+        health={fighter.health}
+        attack={fighter.attack}
+        // turn={turn}
+        // addUnit={addUnit}
+      />
     </div>
   );
 };
