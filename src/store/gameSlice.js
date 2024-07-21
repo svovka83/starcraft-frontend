@@ -112,10 +112,14 @@ const gameSlice = createSlice({
 
       if (player.fighter.name && opponent.fighter.name) {
         opponent.fighter.health -= player.fighter.attack;
+        player.fighter.health -= opponent.fighter.attack / 2;
       } else return;
 
       if (opponent.fighter.health <= 0) {
         opponent.fighter = {};
+      }
+      if (player.fighter.health <= 0) {
+        player.fighter = {};
       }
 
       state.turn = !state.turn;

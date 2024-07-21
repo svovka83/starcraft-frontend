@@ -8,18 +8,34 @@
   height: 10vh;
 }
 
-.battleground {
+.shop_fight {
   display: grid;
-  grid-template:
-    "a d e f"
-    "b d e g"
-    "c d e h"
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  height: 26vh;
+  margin: 5px;
 }
 
-.battleground>div {
+.army_battle {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.army_battle> span {
   box-sizing: border-box;
   border: 2px solid;
   border-radius: 10px;
-  height: 28vh;
+  height: 34vh;
+  margin: 5px;
+}
+
+.minerals_product {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.minerals_product > span {
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 25vh;
   margin: 5px;
 }

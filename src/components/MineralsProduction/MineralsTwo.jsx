@@ -29,7 +29,7 @@ const MineralsTwo = () => {
   const takeMinerals = () => dispatch(addMinerals());
 
   return (
-    <div>
+    <div className={styles.minerals}>
       <div>
         <Workers workers={workers} addWorker={addWorkers} turn={turn} />
       </div>
