@@ -1,14 +1,5 @@
 .army {
-  padding: 0 15px;
-}
-
-.army>ul {
-  text-align: center;
-}
-
-.army>ul>li {
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-  border: 1px solid;
-  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

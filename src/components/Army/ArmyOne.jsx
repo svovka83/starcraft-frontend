@@ -2,6 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./Army.module.css";
 
+import Unit from "../Unit/Unit";
+
 import {
   selectorArmyOne,
   addUnitToBattleground,
@@ -15,21 +17,22 @@ const ArmyOne = () => {
   const turn = !turnRevers;
 
   const addUnit = (unitId) => {
-    console.log(unitId);
     dispatch(addUnitToBattleground(unitId));
   };
 
   return (
     <div className={styles.army}>
-      <ul>
-        {units.map((el, index) => (
-          <li key={el.id}>
-            <button disabled={turn} onClick={() => addUnit(el.id)}>
-              {el.name}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {units.map((el) => (
+        <Unit
+          key={el.id}
+          id={el.id}
+          name={el.name}
+          health={el.health}
+          attack={el.attack}
+          turn={turn}
+          addUnit={addUnit}
+        />
+      ))}
     </div>
   );
 };

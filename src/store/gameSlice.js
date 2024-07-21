@@ -6,7 +6,22 @@ import { PROTOSS, PROBE } from "../constants/protoss";
 const initialState = {
   one: {
     units: ZERG,
-    army: [],
+    army: [
+      {
+        id: 3,
+        name: "Mutalisk",
+        health: 3,
+        attack: 2,
+        price: 3,
+      },
+      {
+        id: 2,
+        name: "Gydralisk",
+        health: 2,
+        attack: 2,
+        price: 2,
+      },
+    ],
     battleground: [],
     fighter: {},
     workers: [DRONE],
@@ -15,7 +30,13 @@ const initialState = {
   },
   two: {
     units: PROTOSS,
-    army: [],
+    army: [  {
+      id: 1,
+      name: "Zealot",
+      health: 2,
+      attack: 3,
+      price: 2,
+    },],
     battleground: [],
     fighter: {},
     workers: [PROBE],
