@@ -3,10 +3,10 @@ import React from "react";
 import styles from "./Game.module.css";
 
 import HeaderGame from "../../components/HeaderGame/HeaderGame";
-import ShopOne from "../../components/Shop/ShopOne";
-import ShopTwo from "../../components/Shop/ShopTwo";
-import ShopModalOne from "../../components/Shop/ShopModalOne";
-import ShopModalTwo from "../../components/Shop/ShopModalTwo";
+import ShopMainOne from "../../components/Shop/ShopMain/ShopMainOne";
+import ShopMainTwo from "../../components/Shop/ShopMain/ShopMainTwo";
+import ShopModalOne from "../../components/Shop/ShopModal/ShopModalOne";
+import ShopModalTwo from "../../components/Shop/ShopModal/ShopModalTwo";
 import ArmyOne from "../../components/Army/ArmyOne";
 import ArmyTwo from "../../components/Army/ArmyTwo";
 import BattlegroundOne from "../../components/Battleground/BattlegroundOne";
@@ -34,10 +34,10 @@ const Game = () => {
       </h2>
       <div className={styles.battleground}>
         <div className={styles.shop_fight}>
-          <ShopOne showModalOne={showModalOne} />
+          <ShopMainOne showModalOne={showModalOne} />
           <FighterOne />
           <FighterTwo />
-          <ShopTwo showModalTwo={showModalTwo}/>
+          <ShopMainTwo showModalTwo={showModalTwo} />
         </div>
         <div className={styles.army_battle}>
           <span>
@@ -63,8 +63,12 @@ const Game = () => {
           </span>
         </div>
       </div>
-      {modalOne && <ShopModalOne />}
-      {modalTwo && <ShopModalTwo />}
+      {modalOne && (
+        <ShopModalOne setModalOne={setModalOne} modalOne={modalOne} />
+      )}
+      {modalTwo && (
+        <ShopModalTwo setModalTwo={setModalTwo} modalTwo={modalTwo} />
+      )}
     </div>
   );
 };

@@ -1,0 +1,21 @@
+.shop_modal {
+  position: fixed;
+  text-align: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 30px;
+  margin: 25vh 55vh;
+  background-color: rgba(234, 128, 255);
+}
+
+.shop_modal>ul {
+  text-align: center;
+}
+
+.shop_modal>ul>li {
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  border: 1px solid;
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+.base {
+  background: url("../../../images/Lair_SCR_Game1.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.add_unit {
+  float: left;
+  cursor: pointer;
+}

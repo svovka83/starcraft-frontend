@@ -1,0 +1,11 @@
+.base {
+  background: url("../../../images/Nexus_Purifier_Fenix.webp");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.add_unit {
+  float: right;
+  cursor: pointer;
+}

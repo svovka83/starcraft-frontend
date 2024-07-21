@@ -1,28 +1,24 @@
 import { useDispatch, useSelector } from "react-redux";
 
-import styles from "./Shop.module.css";
+import styles from "./ShopModal.module.css";
 
-import {
-  addUnitToArmy,
-  selectorTurn,
-  selectorUnitsTwo,
-} from "../../store/gameSlice";
+import { addUnitToArmy, selectorUnitsTwo } from "../../../store/gameSlice";
 
-const ShopModalTwo = () => {
+const ShopModalTwo = (props) => {
   const dispatch = useDispatch();
   const units = useSelector(selectorUnitsTwo);
-  const turn = useSelector(selectorTurn);
 
   const addUnit = (unitId) => {
     dispatch(addUnitToArmy(unitId));
+    props.setModalTwo(!props.modalTwo);
   };
 
   return (
-    <div className={styles.shop}>
+    <div className={styles.shop_modal}>
       <ul>
         {units.map((el) => (
           <li key={el.id}>
-            <button disabled={turn} onClick={() => addUnit(el.id)}>
+            <button onClick={() => addUnit(el.id)}>
               {el.name} price: {el.price}
             </button>
           </li>
