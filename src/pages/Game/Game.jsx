@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 import styles from "./Game.module.css";
 
@@ -16,8 +17,14 @@ import MineralsTwo from "../../components/MineralsProduction/MineralsTwo";
 import FighterOne from "../../components/Fighter/FighterOne";
 import FighterTwo from "../../components/Fighter/FighterTwo";
 import Turn from "../../utils/Turn";
+import Fight from "../../utils/Fight";
+
+import { selectorFighterOne, selectorFighterTwo } from "../../store/gameSlice";
 
 const Game = () => {
+  const fighterOne = useSelector(selectorFighterOne);
+  const fighterTwo = useSelector(selectorFighterTwo);
+
   const [modalOne, setModalOne] = React.useState(false);
   const [modalTwo, setModalTwo] = React.useState(false);
 
@@ -70,7 +77,8 @@ const Game = () => {
       {modalTwo && (
         <ShopModalTwo setModalTwo={setModalTwo} modalTwo={modalTwo} />
       )}
-      <Turn/>
+      <Turn />
+      {fighterOne.id && fighterTwo.id && <Fight />}
     </div>
   );
 };

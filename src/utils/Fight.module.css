@@ -1,0 +1,11 @@
+.one {
+  position: fixed;
+  top: 16vh;
+  right: 50%;
+}
+
+.two {
+  position: fixed;
+  top: 16vh;
+  left: 50%;
+}
