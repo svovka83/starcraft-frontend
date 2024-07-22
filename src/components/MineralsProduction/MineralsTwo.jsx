@@ -10,18 +10,16 @@ import {
   addMinerals,
   selectorWorkersTwo,
   selectorMineTwo,
-  selectorTurn,
 } from "../../store/gameSlice";
 
 const MineralsTwo = () => {
   const dispatch = useDispatch();
   const workers = useSelector(selectorWorkersTwo);
   const minerals = useSelector(selectorMineTwo);
-  const turn = useSelector(selectorTurn);
 
   const addWorkers = () => {
     if (workers.length > 2) {
-      return alert("maximum workers");
+      return alert(`maximum ${workers[0].name}`);
     }
     dispatch(addWorker());
   };
@@ -31,10 +29,10 @@ const MineralsTwo = () => {
   return (
     <div className={styles.minerals}>
       <div>
-        <Workers workers={workers} addWorker={addWorkers} turn={turn} />
+        <Workers workers={workers} addWorker={addWorkers} />
       </div>
       <div>
-        <Mine minerals={minerals} takeMinerals={takeMinerals} turn={turn} />
+        <Mine minerals={minerals} takeMinerals={takeMinerals} />
       </div>
     </div>
   );

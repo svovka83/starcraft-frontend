@@ -3,11 +3,9 @@ const Workers = (props) => {
     <div>
       {props.workers.map((worker, index) => (
         <span key={index}>{worker.name}</span>
-        ))}
-        <p>PRICE: {props.workers[0].price}</p>
-      <button disabled={props.turn} onClick={props.addWorker}>
-        Add worker
-      </button>
+      ))}
+      <p>PRICE: {props.workers[0].price}</p>
+      <button onClick={props.addWorker}>Add worker</button>
     </div>
   );
 };

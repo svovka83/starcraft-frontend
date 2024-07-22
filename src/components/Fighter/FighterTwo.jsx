@@ -16,7 +16,6 @@ const FighterTwo = () => {
         name={fighter.name}
         health={fighter.health}
         attack={fighter.attack}
-        // turn={turn}
         // addUnit={addUnit}
       />
     </div>

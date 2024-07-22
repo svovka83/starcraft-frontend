@@ -2,9 +2,9 @@ import styles from "./Unit.module.css";
 
 import gidral from "../../images/gidralisk.png";
 
-const Unit = ({ turn, addUnit, id, name, health, attack }) => {
+const Unit = ({ addUnit, id, name, health, attack }) => {
   return (
-    <div className={styles.unit} disabled={turn} onClick={() => addUnit(id)}>
+    <div className={styles.unit} onClick={() => addUnit(id)}>
       <div className={styles.params}>
         <div className={styles.name}>{name}</div>
         <div className={styles.health_attack}>

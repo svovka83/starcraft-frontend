@@ -16,14 +16,13 @@ const BattlegroundTwo = () => {
 
   return (
     <div className={styles.battleground}>
-      {units.map((el) => (
+      {units.map((el, index) => (
         <Unit
-          key={el.id}
+          key={index}
           id={el.id}
           name={el.name}
           health={el.health}
           attack={el.attack}
-          // turn={turn}
           addUnit={addUnit}
         />
       ))}

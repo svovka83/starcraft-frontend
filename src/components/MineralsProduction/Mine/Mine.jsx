@@ -1,10 +1,8 @@
-const Mine = (props) => {
+const Mine = ({ minerals, takeMinerals }) => {
   return (
     <div>
-      <p>Minerals: {props.minerals} </p>
-      <button disabled={props.turn} onClick={props.takeMinerals}>
-        Add minerals
-      </button>
+      <p>Minerals: {minerals} </p>
+      <button onClick={takeMinerals}>Add minerals</button>
     </div>
   );
 };

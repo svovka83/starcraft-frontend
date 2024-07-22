@@ -15,6 +15,7 @@ import MineralsOne from "../../components/MineralsProduction/MineralsOne";
 import MineralsTwo from "../../components/MineralsProduction/MineralsTwo";
 import FighterOne from "../../components/Fighter/FighterOne";
 import FighterTwo from "../../components/Fighter/FighterTwo";
+import Turn from "../../utils/Turn";
 
 const Game = () => {
   const [modalOne, setModalOne] = React.useState(false);
@@ -69,6 +70,7 @@ const Game = () => {
       {modalTwo && (
         <ShopModalTwo setModalTwo={setModalTwo} modalTwo={modalTwo} />
       )}
+      <Turn/>
     </div>
   );
 };
