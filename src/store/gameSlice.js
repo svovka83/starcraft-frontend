@@ -46,7 +46,7 @@ const initialState = {
       },
     ],
     fighter: {},
-    bossOne: 25,
+    boss: 25,
     workers: [DRONE],
     mine: 20,
     minerals: 5,
@@ -72,7 +72,7 @@ const initialState = {
       },
     ],
     fighter: {},
-    bossTwo: 25,
+    boss: 25,
     workers: [PROBE],
     mine: 20,
     minerals: 5,
@@ -191,22 +191,30 @@ const gameSlice = createSlice({
 
       state.turn = !state.turn;
     },
+    fightBoss: (state) => {
+      const player = state.turn ? state.one : state.two;
+      const opponent = state.turn ? state.two : state.one;
+
+      opponent.boss -= player.fighter.attack;
+
+      state.turn = !state.turn;
+    },
   },
   selectors: {
     selectorUnitsOne: (state) => state.one.units,
     selectorArmyOne: (state) => state.one.army,
     selectorBattlegroundOne: (state) => state.one.battleground,
     selectorFighterOne: (state) => state.one.fighter,
-    selectorBossOne: (state) => state.one.bossOne,
+    selectorBossOne: (state) => state.one.boss,
     selectorWorkersOne: (state) => state.one.workers,
     selectorMineOne: (state) => state.one.mine,
     selectorMineralsOne: (state) => state.one.minerals,
-    
+
     selectorUnitsTwo: (state) => state.two.units,
     selectorArmyTwo: (state) => state.two.army,
     selectorBattlegroundTwo: (state) => state.two.battleground,
     selectorFighterTwo: (state) => state.two.fighter,
-    selectorBossTwo: (state) => state.two.bossTwo,
+    selectorBossTwo: (state) => state.two.boss,
     selectorWorkersTwo: (state) => state.two.workers,
     selectorMineTwo: (state) => state.two.mine,
     selectorMineralsTwo: (state) => state.two.minerals,
@@ -222,6 +230,7 @@ export const {
   addMinerals,
   addFighter,
   fight,
+  fightBoss,
 } = gameSlice.actions;
 
 export const {

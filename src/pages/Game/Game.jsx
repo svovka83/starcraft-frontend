@@ -19,9 +19,15 @@ import FighterTwo from "../../components/Fighter/FighterTwo";
 import Turn from "../../utils/Turn";
 import Fight from "../../utils/Fight";
 
-import { selectorFighterOne, selectorFighterTwo } from "../../store/gameSlice";
+import {
+  selectorFighterOne,
+  selectorFighterTwo,
+  selectorTurn,
+} from "../../store/gameSlice";
+import FightBoss from "../../utils/FightBoss";
 
 const Game = () => {
+  const turn = useSelector(selectorTurn);
   const fighterOne = useSelector(selectorFighterOne);
   const fighterTwo = useSelector(selectorFighterTwo);
 
@@ -79,6 +85,8 @@ const Game = () => {
       )}
       <Turn />
       {fighterOne.id && fighterTwo.id && <Fight />}
+      {fighterOne.id && !fighterTwo.id && turn && <FightBoss />}
+      {!fighterOne.id && fighterTwo.id && !turn && <FightBoss />}
     </div>
   );
 };
