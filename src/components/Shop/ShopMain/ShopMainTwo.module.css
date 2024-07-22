@@ -9,3 +9,14 @@
   float: right;
   cursor: pointer;
 }
+
+.life {
+  float: left;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 50%;
+  color: white;
+  background-color: green;
+}

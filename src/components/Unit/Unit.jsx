@@ -8,8 +8,8 @@ const Unit = ({ addUnit, id, name, health, attack }) => {
       <div className={styles.params}>
         <div className={styles.name}>{name}</div>
         <div className={styles.health_attack}>
-          <div className={styles.health}>{health}</div>
-          <div className={styles.attack}>{attack}</div>
+          <span className={styles.health}>{health}</span>
+          <span className={styles.attack}>{attack}</span>
         </div>
       </div>
       <img className={styles.img} src={gidral} alt="unit" />

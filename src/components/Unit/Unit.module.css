@@ -31,6 +31,7 @@
 .health {
   text-align: center;
   width: 18px;
+  height: 18px;
   border-radius: 50%;
   font-size: 14px;
   font-weight: 600;
@@ -41,6 +42,7 @@
 .attack {
   text-align: center;
   width: 18px;
+  height: 18px;
   border-radius: 50%;
   font-size: 14px;
   color: white;
