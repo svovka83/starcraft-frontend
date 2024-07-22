@@ -4,14 +4,14 @@ import styles from "./Battleground.module.css";
 
 import Unit from "../Unit/Unit";
 
-import { addFighterOne, selectorBattlegroundOne } from "../../store/gameSlice";
+import { addFighter, selectorBattlegroundOne } from "../../store/gameSlice";
 
 const BattlegroundOne = () => {
   const dispatch = useDispatch();
   const units = useSelector(selectorBattlegroundOne);
 
   const addUnit = (unitId) => {
-    dispatch(addFighterOne(unitId));
+    dispatch(addFighter(unitId));
   };
 
   return (

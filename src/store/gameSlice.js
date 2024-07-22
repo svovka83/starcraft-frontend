@@ -147,17 +147,29 @@ const gameSlice = createSlice({
         state.turn = !state.turn;
       }
     },
-    addFighterOne: (state, action) => {
-      const fighter = state.one.battleground.find(
+    addFighter: (state, action) => {
+      const player = state.turn ? state.one : state.two;
+
+      const fighter = player.battleground.find(
         (el) => el.id === action.payload
       );
-      state.one.fighter = fighter;
-    },
-    addFighterTwo: (state, action) => {
-      const fighter = state.two.battleground.find(
-        (el) => el.id === action.payload
+      const removeUnit = player.battleground.filter(
+        (el) => el.id !== action.payload
       );
-      state.two.fighter = fighter;
+
+      const returnUnit = player.fighter.name
+        ? [...removeUnit, player.fighter]
+        : removeUnit;
+
+      return {
+        ...state,
+        [state.turn ? "one" : "two"]: {
+          ...player,
+          battleground: returnUnit,
+          fighter: fighter,
+        },
+        turn: !state.turn,
+      };
     },
     fight: (state) => {
       const player = state.turn ? state.one : state.two;
@@ -204,8 +216,7 @@ export const {
   addUnitToBattleground,
   addWorker,
   addMinerals,
-  addFighterOne,
-  addFighterTwo,
+  addFighter,
   fight,
 } = gameSlice.actions;
 
