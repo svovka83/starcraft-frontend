@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 import styles from "./Fighter.module.css";
 
-import Unit from "../Unit/Unit";
+import gidral from "../../images/Marine_SC2_DevRend1.webp";
 
 import { selectorFighterOne } from "../../store/gameSlice";
 
@@ -11,13 +11,14 @@ const FighterOne = () => {
 
   return (
     <div className={styles.fighter}>
-      <Unit
-        id={fighter.id}
-        name={fighter.name}
-        health={fighter.health}
-        attack={fighter.attack}
-        // addUnit={addUnit}
-      />
+      <div className={styles.params}>
+        <div className={styles.name}>{fighter.name}</div>
+        <div className={styles.health_attack}>
+          <div className={styles.health}>{fighter.health}</div>
+          <div className={styles.attack}>{fighter.attack}</div>
+        </div>
+      </div>
+      <img className={styles.img} src={gidral} alt="unit" />
     </div>
   );
 };

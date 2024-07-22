@@ -21,21 +21,30 @@ const initialState = {
         attack: 2,
         price: 2,
       },
+      {
+        id: 4,
+        name: "Ultralisk",
+        health: 8,
+        attack: 5,
+        price: 6,
+      },
     ],
-    battleground: [      {
-      id: 3,
-      name: "Mutalisk",
-      health: 3,
-      attack: 2,
-      price: 3,
-    },
-    {
-      id: 2,
-      name: "Gydralisk",
-      health: 2,
-      attack: 2,
-      price: 2,
-    },],
+    battleground: [
+      {
+        id: 3,
+        name: "Mutalisk",
+        health: 3,
+        attack: 2,
+        price: 3,
+      },
+      {
+        id: 2,
+        name: "Gydralisk",
+        health: 2,
+        attack: 2,
+        price: 2,
+      },
+    ],
     fighter: {},
     workers: [DRONE],
     mine: 20,
@@ -43,20 +52,24 @@ const initialState = {
   },
   two: {
     units: PROTOSS,
-    army: [  {
-      id: 1,
-      name: "Zealot",
-      health: 2,
-      attack: 3,
-      price: 2,
-    },],
-    battleground: [  {
-      id: 2,
-      name: "Stalker",
-      health: 3,
-      attack: 2,
-      price: 3,
-    },],
+    army: [
+      {
+        id: 1,
+        name: "Zealot",
+        health: 2,
+        attack: 3,
+        price: 2,
+      },
+    ],
+    battleground: [
+      {
+        id: 2,
+        name: "Stalker",
+        health: 3,
+        attack: 2,
+        price: 3,
+      },
+    ],
     fighter: {},
     workers: [PROBE],
     mine: 20,
@@ -93,7 +106,7 @@ const gameSlice = createSlice({
       const player = state.turn ? state.one : state.two;
 
       const battleUnit = player.army.find((el) => el.id === action.payload);
-      const removeUnit = player.army.filter((el) => el.id !== action.payload);
+      const removeUnit = player.army.filter((el) => el.id !== action.payload); // ???
       return {
         ...state,
         [state.turn ? "one" : "two"]: {

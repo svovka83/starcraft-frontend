@@ -1,6 +1,6 @@
 import styles from "./Unit.module.css";
 
-import gidral from "../../images/gidralisk.png";
+import gidral from "../../images/Marine_SC2_DevRend1.webp";
 
 const Unit = ({ addUnit, id, name, health, attack }) => {
   return (
