@@ -1,11 +1,24 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./ShopMainTwo.module.css";
 
-import { selectorBossTwo } from "../../../store/gameSlice";
+import {
+  addWorker,
+  selectorBossTwo,
+  selectorWorkersTwo,
+} from "../../../store/gameSlice";
 
 const ShopMainTwo = (props) => {
+  const dispatch = useDispatch();
   const boss = useSelector(selectorBossTwo);
+  const workers = useSelector(selectorWorkersTwo);
+
+  const addWorkers = () => {
+    if (workers.length > 2) {
+      return alert(`maximum ${workers[0].name}`);
+    }
+    dispatch(addWorker());
+  };
 
   return (
     <div className={styles.base}>
@@ -13,6 +26,7 @@ const ShopMainTwo = (props) => {
         ShopTwo
       </button>
       <div className={styles.life}>{boss}</div>
+      <button onClick={addWorkers}>Add worker</button>
     </div>
   );
 };

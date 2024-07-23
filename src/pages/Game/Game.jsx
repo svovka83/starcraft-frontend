@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import styles from "./Game.module.css";
@@ -18,15 +19,25 @@ import FighterOne from "../../components/Fighter/FighterOne";
 import FighterTwo from "../../components/Fighter/FighterTwo";
 import Turn from "../../utils/Turn";
 import Fight from "../../utils/Fight";
+import FightBoss from "../../utils/FightBoss";
 
 import {
+  selectorBossOne,
+  selectorBossTwo,
   selectorFighterOne,
   selectorFighterTwo,
   selectorTurn,
 } from "../../store/gameSlice";
-import FightBoss from "../../utils/FightBoss";
 
 const Game = () => {
+  const navigate = useNavigate()
+  const bossOne = useSelector(selectorBossOne);
+  const bossTwo = useSelector(selectorBossTwo);
+
+  if (bossOne <= 0 || bossTwo <= 0) {
+    alert("Finish game!!!")
+    navigate("/selection")
+  }
   const turn = useSelector(selectorTurn);
   const fighterOne = useSelector(selectorFighterOne);
   const fighterTwo = useSelector(selectorFighterTwo);

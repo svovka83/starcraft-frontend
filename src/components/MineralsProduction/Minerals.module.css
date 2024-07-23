@@ -1,9 +1,11 @@
 .minerals {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
   height: 25vh;
-  /* background: url("../../images/Minerals_SC2_Game1.webp");
-  background-size: cover; */
+  background: url("../../images/Minerals_SC2_Game1.webp");
+  background-size: cover;
+}
+
+.worker {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }

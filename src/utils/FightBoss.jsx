@@ -2,7 +2,10 @@ import { useDispatch, useSelector } from "react-redux";
 
 import styles from "./FightBoss.module.css";
 
-import { fightBoss, selectorTurn } from "../store/gameSlice";
+import {
+  fightBoss,
+  selectorTurn,
+} from "../store/gameSlice";
 
 const FightBoss = () => {
   const dispatch = useDispatch();

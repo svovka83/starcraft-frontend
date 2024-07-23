@@ -6,7 +6,6 @@ import Workers from "./Workers/Workers";
 import Mine from "./Mine/Mine";
 
 import {
-  addWorker,
   addMinerals,
   selectorWorkersOne,
   selectorMineOne,
@@ -17,23 +16,22 @@ const MineralsOne = () => {
   const workers = useSelector(selectorWorkersOne);
   const minerals = useSelector(selectorMineOne);
 
-  const addWorkers = () => {
-    if (workers.length > 2) {
-      return alert(`maximum ${workers[0].name}`);
-    }
-    dispatch(addWorker());
-  };
-
   const takeMinerals = () => dispatch(addMinerals());
 
   return (
     <div className={styles.minerals}>
-      <div>
-        <Workers workers={workers} addWorker={addWorkers} />
+      <div className={styles.worker}>
+        {workers.map((el, index) => (
+          <Workers
+            key={index}
+            id={el.id}
+            name={el.name}
+            health={el.health}
+            attack={el.attack}
+          />
+        ))}
       </div>
-      <div>
-        <Mine minerals={minerals} takeMinerals={takeMinerals} />
-      </div>
+      <Mine minerals={minerals} takeMinerals={takeMinerals} />
     </div>
   );
 };

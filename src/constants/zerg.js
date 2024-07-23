@@ -1,6 +1,8 @@
 export const DRONE = {
   id: 11,
   name: "Drone",
+  health: 1,
+  attack: 1,
   price: 1,
 };
 
